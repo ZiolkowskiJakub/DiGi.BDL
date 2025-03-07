@@ -1,7 +1,7 @@
 ﻿using DiGi.BDL.Classes;
-using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
@@ -13,54 +13,25 @@ namespace DiGi.BDL
         {
             HttpClient httpClient = new HttpClient();
 
-            string url = string.Format("{0}/{1}?format=json&page-size={2}", Constans.Url.EndPoint, Constans.Url.Id.Units, pageSize);
+            string url = string.Format("{0}/{1}?format=json", Constans.Url.EndPoint, Constans.Url.Id.Units);
 
-            List<Unit> result = new List<Unit>();
-
-            try
-            {
-                JsonObject jsonObject;
-
-                do
-                {
-                    jsonObject = null;
-
-                    if(!string.IsNullOrWhiteSpace(url))
-                    {
-                        string json = await httpClient.GetStringAsync(url);
-                        if (!string.IsNullOrWhiteSpace(json))
-                        {
-                            url = null;
-
-                            jsonObject = JsonNode.Parse(json)?.AsObject();
-                            if (jsonObject != null)
-                            {
-                                Response<Unit> response = Response<Unit>(jsonObject);
-                                if(response != null)
-                                {
-                                    if(url != response.links.last)
-                                    {
-                                        url = response.links.next;
-                                    }
-
-                                    if (response.results != null)
-                                    {
-                                        result.AddRange(response.results);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                while (jsonObject != null);
-
-                
-            }
-            catch (Exception ex)
+            List<JsonObject> jsonObjects = await JsonObjects(url, pageSize);
+            if(jsonObjects == null)
             {
                 return null;
             }
 
+            List<Unit> result = new List<Unit>();
+            foreach(JsonObject jsonObject in jsonObjects)
+            {
+                UnitsResponse unitsResponse = JsonSerializer.Deserialize<UnitsResponse>(jsonObject);
+                if(unitsResponse == null)
+                {
+                    continue;
+                }
+
+                result.AddRange(unitsResponse.results);
+            }
 
             return result;
         }

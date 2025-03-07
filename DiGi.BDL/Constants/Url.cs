@@ -7,6 +7,7 @@
         public static class Id
         {
             public const string Units = "units";
+            public const string Variables = "variables";
         }
     }
 }

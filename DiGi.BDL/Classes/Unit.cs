@@ -2,7 +2,7 @@
 
 namespace DiGi.BDL.Classes
 {
-    public class Unit : IBDLObject, IResultObject
+    public class Unit : IResultObject
     {
         public string id { get; set; }
 
