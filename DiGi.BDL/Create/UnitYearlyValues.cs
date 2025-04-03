@@ -11,7 +11,7 @@ namespace DiGi.BDL
 {
     public static partial class Create
     {
-        public static async Task<UnitYearlyValues> UnitYearlyValues(string unitId, IEnumerable<Variable> variables, IEnumerable<int> years, int pageSize = 100)
+        public static async Task<UnitYearlyValues> UnitYearlyValues(string unitId, IEnumerable<Variable> variables, IEnumerable<int> years, int pageSize = 100, int variablesMaxCount = 50)
         {
             if(string.IsNullOrWhiteSpace(unitId) || variables == null || variables.Count() == 0 || years == null || years.Count() == 0)
             {
@@ -22,39 +22,50 @@ namespace DiGi.BDL
 
             string url = string.Format("{0}/data/by-unit/{1}?format=json", Constans.Url.EndPoint, unitId);
 
-            foreach(Variable variable in variables)
-            {
-                url += string.Format("&var-id={0}", (int)variable);
-            }
-
             foreach (int year in years)
             {
                 url += string.Format("&year={0}", year);
             }
 
-            List<JsonObject> jsonObjects = await JsonObjects(url, pageSize);
-            if(jsonObjects == null)
-            {
-                return null;
-            }
-
             UnitYearlyValues result = null;
 
-            foreach (JsonObject jsonObject in jsonObjects)
+            List<Variable> variables_Temp = new List<Variable>(variables);
+            while(variables_Temp.Count > 0)
             {
-                UnitYearlyValues unitYearlyValues = JsonSerializer.Deserialize<UnitYearlyValues>(jsonObject);
-                if(unitYearlyValues == null)
+                string url_Temp = url;
+
+                int count = System.Math.Min(variables_Temp.Count, variablesMaxCount);
+
+                List<Variable> variables_Range = variables_Temp.GetRange(0, count);
+                variables_Temp.RemoveRange(0, count);
+
+                foreach (Variable variable in variables_Range)
                 {
-                    continue;
+                    url_Temp += string.Format("&var-id={0}", (int)variable);
                 }
 
-                if(result == null)
+                List<JsonObject> jsonObjects = await JsonObjects(url_Temp, pageSize);
+                if (jsonObjects == null)
                 {
-                    result = unitYearlyValues;
+                    return null;
                 }
-                else
+
+                foreach (JsonObject jsonObject in jsonObjects)
                 {
-                    result.results.AddRange(unitYearlyValues.results);
+                    UnitYearlyValues unitYearlyValues = JsonSerializer.Deserialize<UnitYearlyValues>(jsonObject);
+                    if (unitYearlyValues == null)
+                    {
+                        continue;
+                    }
+
+                    if (result == null)
+                    {
+                        result = unitYearlyValues;
+                    }
+                    else
+                    {
+                        result.results.AddRange(unitYearlyValues.results);
+                    }
                 }
             }
 
