@@ -12,6 +12,6 @@ namespace DiGi.BDL.Classes
 
         public DateTime lastUpdate { get; set; }
 
-        public List<YearlyValue> values { get; set; }
+        public List<YearlyValue>? values { get; set; }
     }
 }

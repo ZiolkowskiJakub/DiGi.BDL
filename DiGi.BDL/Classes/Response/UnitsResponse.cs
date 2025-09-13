@@ -1,7 +1,4 @@
-﻿using DiGi.BDL.Interfaces;
-using System.Collections.Generic;
-
-namespace DiGi.BDL.Classes
+﻿namespace DiGi.BDL.Classes
 {
     public class UnitsResponse : Response<Unit>
     {

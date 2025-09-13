@@ -5,7 +5,7 @@ namespace DiGi.BDL
 {
     public static partial class Query
     {
-        public static Category Category(this Enum @enum)
+        public static Category? Category(this Enum? @enum)
         {
             return CustomAttribute<Category>(@enum);
         }

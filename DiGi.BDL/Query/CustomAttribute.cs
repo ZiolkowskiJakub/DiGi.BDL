@@ -5,16 +5,15 @@ namespace DiGi.BDL
 {
     public static partial class Query
     {
-        public static TAttribute CustomAttribute<TAttribute>(this Enum @enum) where TAttribute : Attribute
+        public static TAttribute? CustomAttribute<TAttribute>(this Enum? @enum) where TAttribute : Attribute
         {
-            FieldInfo field = @enum.GetType().GetField(@enum.ToString());
-
-            if (field == null)
+            FieldInfo? fieldInfo = @enum?.GetType().GetField(@enum.ToString());
+            if (fieldInfo == null)
             {
                 return null;
             }
 
-            return Attribute.GetCustomAttribute(field, typeof(TAttribute)) as TAttribute;
+            return Attribute.GetCustomAttribute(fieldInfo, typeof(TAttribute)) as TAttribute;
         }
     }
 }

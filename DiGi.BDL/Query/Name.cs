@@ -5,7 +5,7 @@ namespace DiGi.BDL
 {
     public static partial class Query
     {
-        public static string Name(this Type type, string id)
+        public static string? Name(this Type? type, string? id)
         {
             if(type == null || string.IsNullOrWhiteSpace(id))
             {
@@ -18,7 +18,7 @@ namespace DiGi.BDL
                 return null;
             }
 
-            if(!dictionary.TryGetValue(id, out object result))
+            if(!dictionary.TryGetValue(id!, out object result))
             {
                 return null;
             }

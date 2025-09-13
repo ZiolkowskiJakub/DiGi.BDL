@@ -7,8 +7,8 @@ namespace DiGi.BDL.Classes
     {
         public int totalRecords { get; set; }
 
-        public List<TResultObject> results { get; set; }
+        public List<TResultObject>? results { get; set; }
 
-        public Links links { get; set; }
+        public Links? links { get; set; }
     }
 }

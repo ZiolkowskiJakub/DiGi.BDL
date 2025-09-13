@@ -5,7 +5,7 @@ namespace DiGi.BDL
 {
     public static partial class Query
     {
-        public static Group Group(this Enum @enum)
+        public static Group? Group(this Enum? @enum)
         {
             return CustomAttribute<Group>(@enum);
         }

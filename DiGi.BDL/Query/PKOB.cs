@@ -5,7 +5,7 @@ namespace DiGi.BDL
 {
     public static partial class Query
     {
-        public static PKOB PKOB(this Enum @enum)
+        public static PKOB? PKOB(this Enum? @enum)
         {
             return CustomAttribute<PKOB>(@enum);
         }
