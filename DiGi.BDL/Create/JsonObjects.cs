@@ -11,15 +11,14 @@ namespace DiGi.BDL
     {
         public static async Task<List<JsonObject>?> JsonObjects(string? url, int pageSize = 100)
         {
-            if(string.IsNullOrWhiteSpace(url))
+            if (string.IsNullOrWhiteSpace(url))
             {
                 return null;
             }
-            
-            HttpClient httpClient = new ();
+
+            HttpClient httpClient = new();
 
             List<JsonObject>? result = [];
-
 
             try
             {
@@ -27,7 +26,7 @@ namespace DiGi.BDL
 
                 do
                 {
-                    using HttpRequestMessage request = new (HttpMethod.Get, url_Temp);
+                    using HttpRequestMessage request = new(HttpMethod.Get, url_Temp);
                     //request.Headers.Add("X-ClientId", "");
 
                     using HttpResponseMessage response = await httpClient.SendAsync(request);
@@ -53,7 +52,7 @@ namespace DiGi.BDL
                                 }
                             }
 
-                            if(!string.IsNullOrWhiteSpace(url_Temp))
+                            if (!string.IsNullOrWhiteSpace(url_Temp))
                             {
                                 Thread.Sleep(100);
                             }
@@ -62,11 +61,10 @@ namespace DiGi.BDL
                 }
                 while (!string.IsNullOrWhiteSpace(url_Temp));
             }
-            catch 
+            catch
             {
                 result = null;
             }
-
 
             return result;
         }

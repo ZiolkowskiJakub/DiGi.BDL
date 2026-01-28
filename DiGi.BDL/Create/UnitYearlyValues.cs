@@ -12,7 +12,7 @@ namespace DiGi.BDL
     {
         public static async Task<UnitYearlyValues?> UnitYearlyValues(string? unitId, IEnumerable<Variable>? variables, IEnumerable<int>? years, int pageSize = 100, int variablesMaxCount = 50)
         {
-            if(string.IsNullOrWhiteSpace(unitId) || variables == null || variables.Count() == 0 || years == null || years.Count() == 0)
+            if (string.IsNullOrWhiteSpace(unitId) || variables == null || variables.Count() == 0 || years == null || years.Count() == 0)
             {
                 return null;
             }
@@ -27,7 +27,7 @@ namespace DiGi.BDL
             UnitYearlyValues? result = null;
 
             List<Variable> variables_Temp = [.. variables];
-            while(variables_Temp.Count > 0)
+            while (variables_Temp.Count > 0)
             {
                 string url_Temp = url;
 

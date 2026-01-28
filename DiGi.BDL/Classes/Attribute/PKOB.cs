@@ -6,7 +6,7 @@ namespace DiGi.BDL.Classes
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
     public class PKOB : Attribute
     {
-        public HashSet<short>? Ids { get;}
+        public HashSet<short>? Ids { get; }
 
         public PKOB(short id)
         {
@@ -15,7 +15,7 @@ namespace DiGi.BDL.Classes
 
         public PKOB(IEnumerable<short>? ids)
         {
-            if(ids != null)
+            if (ids != null)
             {
                 Ids = [.. ids];
             }
@@ -32,7 +32,7 @@ namespace DiGi.BDL.Classes
         public PKOB(short from, short to)
         {
             Ids = [];
-            for(short i= from; i <= to; i++)
+            for (short i = from; i <= to; i++)
             {
                 Ids.Add(i);
             }

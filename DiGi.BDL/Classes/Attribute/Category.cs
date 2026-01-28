@@ -6,9 +6,9 @@ namespace DiGi.BDL.Classes
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
     public class Category : Attribute
     {
-        public string? Id { get;}
+        public string? Id { get; }
 
-        public string? Name { get;}
+        public string? Name { get; }
 
         public Category(string? id, string? name)
         {

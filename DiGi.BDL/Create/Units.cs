@@ -13,16 +13,16 @@ namespace DiGi.BDL
             string url = string.Format("{0}/{1}?format=json", Constans.Url.EndPoint, Constans.Url.Id.Units);
 
             List<JsonObject>? jsonObjects = await JsonObjects(url, pageSize);
-            if(jsonObjects == null)
+            if (jsonObjects == null)
             {
                 return null;
             }
 
             List<Unit> result = [];
-            foreach(JsonObject jsonObject in jsonObjects)
+            foreach (JsonObject jsonObject in jsonObjects)
             {
                 UnitsResponse? unitsResponse = JsonSerializer.Deserialize<UnitsResponse>(jsonObject);
-                if(unitsResponse == null)
+                if (unitsResponse == null)
                 {
                     continue;
                 }
