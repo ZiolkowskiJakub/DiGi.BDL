@@ -1,4 +1,4 @@
-﻿using DiGi.BDL.Constans;
+﻿using DiGi.BDL.Constants;
 using System;
 
 namespace DiGi.BDL.Classes

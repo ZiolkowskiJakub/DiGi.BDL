@@ -10,7 +10,7 @@ namespace DiGi.BDL
     {
         public static async Task<List<Unit>?> Units(int pageSize = 100)
         {
-            string url = string.Format("{0}/{1}?format=json", Constans.Url.EndPoint, Constans.Url.Id.Units);
+            string url = string.Format("{0}/{1}?format=json", Constants.Url.EndPoint, Constants.Url.Id.Units);
 
             List<JsonObject>? jsonObjects = await JsonObjects(url, pageSize);
             if (jsonObjects == null)

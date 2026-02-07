@@ -17,7 +17,7 @@ namespace DiGi.BDL
                 return null;
             }
 
-            string url = string.Format("{0}/data/by-unit/{1}?format=json", Constans.Url.EndPoint, unitId);
+            string url = string.Format("{0}/data/by-unit/{1}?format=json", Constants.Url.EndPoint, unitId);
 
             foreach (int year in years)
             {

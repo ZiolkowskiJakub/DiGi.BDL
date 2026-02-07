@@ -1,4 +1,4 @@
-﻿namespace DiGi.BDL.Constans
+﻿namespace DiGi.BDL.Constants
 {
     public static class Name
     {
