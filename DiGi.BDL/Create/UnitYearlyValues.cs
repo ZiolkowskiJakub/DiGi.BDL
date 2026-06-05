@@ -10,6 +10,15 @@ namespace DiGi.BDL
 {
     public static partial class Create
     {
+        /// <summary>
+        /// Retrieves yearly values for a specific unit based on the provided variables and years.
+        /// </summary>
+        /// <param name="unitId">The unique identifier of the unit.</param>
+        /// <param name="variables">A collection of variables to retrieve data for.</param>
+        /// <param name="years">A collection of years for which to retrieve data.</param>
+        /// <param name="pageSize">The number of results per page.</param>
+        /// <param name="variablesMaxCount">The maximum number of variables to process in a single request batch.</param>
+        /// <returns>An instance of <see cref="UnitYearlyValues"/> containing the retrieved data, or null if inputs are invalid or retrieval fails.</returns>
         public static async Task<UnitYearlyValues?> UnitYearlyValues(string? unitId, IEnumerable<Variable>? variables, IEnumerable<int>? years, int pageSize = 100, int variablesMaxCount = 50)
         {
             if (string.IsNullOrWhiteSpace(unitId) || variables == null || variables.Count() == 0 || years == null || years.Count() == 0)

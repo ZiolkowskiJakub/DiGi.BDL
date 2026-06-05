@@ -8,6 +8,11 @@ namespace DiGi.BDL
 {
     public static partial class Create
     {
+        /// <summary>
+        /// Asynchronously retrieves a list of units from the API endpoint.
+        /// </summary>
+        /// <param name="pageSize">The number of records to retrieve per page.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains a list of <see cref="Unit"/> objects, or null if no data is returned.</returns>
         public static async Task<List<Unit>?> Units(int pageSize = 100)
         {
             string url = string.Format("{0}/{1}?format=json", Constants.Url.EndPoint, Constants.Url.Id.Units);

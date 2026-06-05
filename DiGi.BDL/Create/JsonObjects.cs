@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -9,6 +9,13 @@ namespace DiGi.BDL
 {
     public static partial class Create
     {
+        /// <summary>
+        /// Asynchronously retrieves a list of <see cref="JsonObject"/> instances from the specified URL, 
+        /// automatically following pagination links until all data is collected.
+        /// </summary>
+        /// <param name="url">The starting URL to fetch JSON objects from.</param>
+        /// <param name="pageSize">The number of records to request per page. Defaults to 100.</param>
+        /// <returns>A list of <see cref="JsonObject"/> if the operation is successful; otherwise, null.</returns>
         public static async Task<List<JsonObject>?> JsonObjects(string? url, int pageSize = 100)
         {
             if (string.IsNullOrWhiteSpace(url))
