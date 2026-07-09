@@ -1,4 +1,4 @@
-#### [DiGi\.BDL](index.md 'index')
+#### [DiGi\.BDL](DiGi.BDL.Overview.md 'DiGi\.BDL\.Overview')
 
 ## DiGi\.BDL\.Constants Namespace
 ### Classes
