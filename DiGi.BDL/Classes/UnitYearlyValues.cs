@@ -1,4 +1,4 @@
-﻿using DiGi.BDL.Interfaces;
+using DiGi.BDL.Interfaces;
 using System.Collections.Generic;
 
 namespace DiGi.BDL.Classes

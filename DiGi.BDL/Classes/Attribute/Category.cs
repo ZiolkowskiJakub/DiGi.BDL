@@ -1,4 +1,4 @@
-﻿using DiGi.BDL.Constants;
+using DiGi.BDL.Constants;
 using System;
 
 namespace DiGi.BDL.Classes
@@ -31,7 +31,7 @@ namespace DiGi.BDL.Classes
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Category"/> class with a specified identifier, 
+        /// Initializes a new instance of the <see cref="Category"/> class with a specified identifier,
         /// resolving the name automatically.
         /// </summary>
         /// <param name="id">The unique identifier for the category.</param>

@@ -1,4 +1,4 @@
-﻿using DiGi.BDL.Classes;
+using DiGi.BDL.Classes;
 using DiGi.BDL.Enums;
 using System.Collections.Generic;
 using System.Linq;

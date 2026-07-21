@@ -20,7 +20,7 @@ Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system
 
 ## Category\(string\) Constructor
 
-Initializes a new instance of the [Category](DiGi.BDL.Classes.md#DiGi.BDL.Classes.Category 'DiGi\.BDL\.Classes\.Category') class with a specified identifier, 
+Initializes a new instance of the [Category](DiGi.BDL.Classes.md#DiGi.BDL.Classes.Category 'DiGi\.BDL\.Classes\.Category') class with a specified identifier,
 resolving the name automatically\.
 
 ```csharp
@@ -415,7 +415,7 @@ Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system
 
 ## SubGroup\(string\) Constructor
 
-Initializes a new instance of the [SubGroup](DiGi.BDL.Classes.md#DiGi.BDL.Classes.SubGroup 'DiGi\.BDL\.Classes\.SubGroup') class with a specified identifier\. 
+Initializes a new instance of the [SubGroup](DiGi.BDL.Classes.md#DiGi.BDL.Classes.SubGroup 'DiGi\.BDL\.Classes\.SubGroup') class with a specified identifier\.
 The name is automatically resolved using the provided identifier\.
 
 ```csharp

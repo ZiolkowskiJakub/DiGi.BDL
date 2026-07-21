@@ -10,7 +10,7 @@ namespace DiGi.BDL
     public static partial class Create
     {
         /// <summary>
-        /// Asynchronously retrieves a list of <see cref="JsonObject"/> instances from the specified URL, 
+        /// Asynchronously retrieves a list of <see cref="JsonObject"/> instances from the specified URL,
         /// automatically following pagination links until all data is collected.
         /// </summary>
         /// <param name="url">The starting URL to fetch JSON objects from.</param>

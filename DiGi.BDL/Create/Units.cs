@@ -1,4 +1,4 @@
-﻿using DiGi.BDL.Classes;
+using DiGi.BDL.Classes;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Nodes;
