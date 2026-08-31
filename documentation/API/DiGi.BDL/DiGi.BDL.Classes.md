@@ -171,12 +171,12 @@ public string? Name { get; }
 Represents a collection of navigation links typically used for pagination in response objects\.
 
 ```csharp
-public class Links : DiGi.BDL.Interfaces.IResponseObject, DiGi.BDL.Interfaces.IBDLObject
+public class Links : DiGi.BDL.Interfaces.IResponseObject, DiGi.BDL.Interfaces.IBDLObject, DiGi.Core.Interfaces.IObject
 ```
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → Links
 
-Implements [DiGi\.BDL\.Interfaces\.IResponseObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.iresponseobject 'DiGi\.BDL\.Interfaces\.IResponseObject'), [DiGi\.BDL\.Interfaces\.IBDLObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.ibdlobject 'DiGi\.BDL\.Interfaces\.IBDLObject')
+Implements [DiGi\.BDL\.Interfaces\.IResponseObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.iresponseobject 'DiGi\.BDL\.Interfaces\.IResponseObject'), [DiGi\.BDL\.Interfaces\.IBDLObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.ibdlobject 'DiGi\.BDL\.Interfaces\.IBDLObject'), [DiGi\.Core\.Interfaces\.IObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.iobject 'DiGi\.Core\.Interfaces\.IObject')
 ### Properties
 
 <a name='DiGi.BDL.Classes.Links.first'></a>
@@ -339,7 +339,7 @@ public System.Collections.Generic.HashSet<short>? Ids { get; }
 Represents a generic base response object that encapsulates result data and metadata\.
 
 ```csharp
-public abstract class Response<TResultObject> : DiGi.BDL.Interfaces.IResponseObject, DiGi.BDL.Interfaces.IBDLObject
+public abstract class Response<TResultObject> : DiGi.BDL.Interfaces.IResponseObject, DiGi.BDL.Interfaces.IBDLObject, DiGi.Core.Interfaces.IObject
     where TResultObject : DiGi.BDL.Interfaces.IResultObject
 ```
 #### Type parameters
@@ -356,7 +356,7 @@ Derived
 ↳ [UnitsResponse](DiGi.BDL.Classes.md#DiGi.BDL.Classes.UnitsResponse 'DiGi\.BDL\.Classes\.UnitsResponse')  
 ↳ [UnitYearlyValuesResponse](DiGi.BDL.Classes.md#DiGi.BDL.Classes.UnitYearlyValuesResponse 'DiGi\.BDL\.Classes\.UnitYearlyValuesResponse')
 
-Implements [DiGi\.BDL\.Interfaces\.IResponseObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.iresponseobject 'DiGi\.BDL\.Interfaces\.IResponseObject'), [DiGi\.BDL\.Interfaces\.IBDLObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.ibdlobject 'DiGi\.BDL\.Interfaces\.IBDLObject')
+Implements [DiGi\.BDL\.Interfaces\.IResponseObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.iresponseobject 'DiGi\.BDL\.Interfaces\.IResponseObject'), [DiGi\.BDL\.Interfaces\.IBDLObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.ibdlobject 'DiGi\.BDL\.Interfaces\.IBDLObject'), [DiGi\.Core\.Interfaces\.IObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.iobject 'DiGi\.Core\.Interfaces\.IObject')
 ### Properties
 
 <a name='DiGi.BDL.Classes.Response_TResultObject_.links'></a>
@@ -486,12 +486,12 @@ public string? Name { get; }
 Represents a unit entity that implements the IResultObject interface\.
 
 ```csharp
-public class Unit : DiGi.BDL.Interfaces.IResultObject, DiGi.BDL.Interfaces.IBDLObject
+public class Unit : DiGi.BDL.Interfaces.IResultObject, DiGi.BDL.Interfaces.IBDLObject, DiGi.Core.Interfaces.IObject
 ```
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → Unit
 
-Implements [DiGi\.BDL\.Interfaces\.IResultObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.iresultobject 'DiGi\.BDL\.Interfaces\.IResultObject'), [DiGi\.BDL\.Interfaces\.IBDLObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.ibdlobject 'DiGi\.BDL\.Interfaces\.IBDLObject')
+Implements [DiGi\.BDL\.Interfaces\.IResultObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.iresultobject 'DiGi\.BDL\.Interfaces\.IResultObject'), [DiGi\.BDL\.Interfaces\.IBDLObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.ibdlobject 'DiGi\.BDL\.Interfaces\.IBDLObject'), [DiGi\.Core\.Interfaces\.IObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.iobject 'DiGi\.Core\.Interfaces\.IObject')
 ### Properties
 
 <a name='DiGi.BDL.Classes.Unit.hasDescription'></a>
@@ -592,12 +592,12 @@ public int pageSize { get; set; }
 Represents a data model containing yearly values associated with a specific unit\.
 
 ```csharp
-public class UnitYearlyValues : DiGi.BDL.Interfaces.IBDLObject
+public class UnitYearlyValues : DiGi.BDL.Interfaces.IBDLObject, DiGi.Core.Interfaces.IObject
 ```
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → UnitYearlyValues
 
-Implements [DiGi\.BDL\.Interfaces\.IBDLObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.ibdlobject 'DiGi\.BDL\.Interfaces\.IBDLObject')
+Implements [DiGi\.BDL\.Interfaces\.IBDLObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.ibdlobject 'DiGi\.BDL\.Interfaces\.IBDLObject'), [DiGi\.Core\.Interfaces\.IObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.iobject 'DiGi\.Core\.Interfaces\.IObject')
 ### Properties
 
 <a name='DiGi.BDL.Classes.UnitYearlyValues.aggregateId'></a>
@@ -711,12 +711,12 @@ public string? unitName { get; set; }
 Represents a data object containing a value associated with a specific year and attribute identifier\.
 
 ```csharp
-public class YearlyValue : DiGi.BDL.Interfaces.IBDLObject
+public class YearlyValue : DiGi.BDL.Interfaces.IBDLObject, DiGi.Core.Interfaces.IObject
 ```
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → YearlyValue
 
-Implements [DiGi\.BDL\.Interfaces\.IBDLObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.ibdlobject 'DiGi\.BDL\.Interfaces\.IBDLObject')
+Implements [DiGi\.BDL\.Interfaces\.IBDLObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.ibdlobject 'DiGi\.BDL\.Interfaces\.IBDLObject'), [DiGi\.Core\.Interfaces\.IObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.iobject 'DiGi\.Core\.Interfaces\.IObject')
 ### Properties
 
 <a name='DiGi.BDL.Classes.YearlyValue.attrId'></a>
@@ -765,12 +765,12 @@ public string? year { get; set; }
 Represents a set of yearly values associated with a specific measurement unit and identifier\.
 
 ```csharp
-public class YearlyValues : DiGi.BDL.Interfaces.IResultObject, DiGi.BDL.Interfaces.IBDLObject
+public class YearlyValues : DiGi.BDL.Interfaces.IResultObject, DiGi.BDL.Interfaces.IBDLObject, DiGi.Core.Interfaces.IObject
 ```
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → YearlyValues
 
-Implements [DiGi\.BDL\.Interfaces\.IResultObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.iresultobject 'DiGi\.BDL\.Interfaces\.IResultObject'), [DiGi\.BDL\.Interfaces\.IBDLObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.ibdlobject 'DiGi\.BDL\.Interfaces\.IBDLObject')
+Implements [DiGi\.BDL\.Interfaces\.IResultObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.iresultobject 'DiGi\.BDL\.Interfaces\.IResultObject'), [DiGi\.BDL\.Interfaces\.IBDLObject](https://learn.microsoft.com/en-us/dotnet/api/digi.bdl.interfaces.ibdlobject 'DiGi\.BDL\.Interfaces\.IBDLObject'), [DiGi\.Core\.Interfaces\.IObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.iobject 'DiGi\.Core\.Interfaces\.IObject')
 ### Properties
 
 <a name='DiGi.BDL.Classes.YearlyValues.id'></a>

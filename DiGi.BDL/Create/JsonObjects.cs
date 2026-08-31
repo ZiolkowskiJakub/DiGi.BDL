@@ -15,8 +15,9 @@ namespace DiGi.BDL
         /// </summary>
         /// <param name="url">The starting URL to fetch JSON objects from.</param>
         /// <param name="pageSize">The number of records to request per page. Defaults to 100.</param>
+        /// <param name="clientId">Optional BDL API client identifier (API key) passed in the X-ClientId header.</param>
         /// <returns>A list of <see cref="JsonObject"/> if the operation is successful; otherwise, null.</returns>
-        public static async Task<List<JsonObject>?> JsonObjects(string? url, int pageSize = 100)
+        public static async Task<List<JsonObject>?> JsonObjects(string? url, int pageSize = 100, string? clientId = null)
         {
             if (string.IsNullOrWhiteSpace(url))
             {
@@ -34,7 +35,10 @@ namespace DiGi.BDL
                 do
                 {
                     using HttpRequestMessage request = new(HttpMethod.Get, url_Temp);
-                    //request.Headers.Add("X-ClientId", "");
+                    if (!string.IsNullOrWhiteSpace(clientId))
+                    {
+                        request.Headers.Add("X-ClientId", clientId);
+                    }
 
                     using HttpResponseMessage response = await httpClient.SendAsync(request);
                     response.EnsureSuccessStatusCode();
@@ -61,7 +65,7 @@ namespace DiGi.BDL
 
                             if (!string.IsNullOrWhiteSpace(url_Temp))
                             {
-                                Thread.Sleep(100);
+                                await Task.Delay(100);
                             }
                         }
                     }

@@ -14,50 +14,62 @@ public static class Create
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → Create
 ### Methods
 
-<a name='DiGi.BDL.Create.JsonObjects(string,int)'></a>
+<a name='DiGi.BDL.Create.JsonObjects(string,int,string)'></a>
 
-## Create\.JsonObjects\(string, int\) Method
+## Create\.JsonObjects\(string, int, string\) Method
 
 Asynchronously retrieves a list of [System\.Text\.Json\.Nodes\.JsonObject](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.nodes.jsonobject 'System\.Text\.Json\.Nodes\.JsonObject') instances from the specified URL,
 automatically following pagination links until all data is collected\.
 
 ```csharp
-public static System.Threading.Tasks.Task<System.Collections.Generic.List<System.Text.Json.Nodes.JsonObject>?> JsonObjects(string? url, int pageSize=100);
+public static System.Threading.Tasks.Task<System.Collections.Generic.List<System.Text.Json.Nodes.JsonObject>?> JsonObjects(string? url, int pageSize=100, string? clientId=null);
 ```
 #### Parameters
 
-<a name='DiGi.BDL.Create.JsonObjects(string,int).url'></a>
+<a name='DiGi.BDL.Create.JsonObjects(string,int,string).url'></a>
 
 `url` [System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')
 
 The starting URL to fetch JSON objects from\.
 
-<a name='DiGi.BDL.Create.JsonObjects(string,int).pageSize'></a>
+<a name='DiGi.BDL.Create.JsonObjects(string,int,string).pageSize'></a>
 
 `pageSize` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
 
 The number of records to request per page\. Defaults to 100\.
 
+<a name='DiGi.BDL.Create.JsonObjects(string,int,string).clientId'></a>
+
+`clientId` [System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')
+
+Optional BDL API client identifier \(API key\) passed in the X\-ClientId header\.
+
 #### Returns
 [System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[System\.Collections\.Generic\.List&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1 'System\.Collections\.Generic\.List\`1')[System\.Text\.Json\.Nodes\.JsonObject](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.nodes.jsonobject 'System\.Text\.Json\.Nodes\.JsonObject')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1 'System\.Collections\.Generic\.List\`1')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
 A list of [System\.Text\.Json\.Nodes\.JsonObject](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.nodes.jsonobject 'System\.Text\.Json\.Nodes\.JsonObject') if the operation is successful; otherwise, null\.
 
-<a name='DiGi.BDL.Create.Units(int)'></a>
+<a name='DiGi.BDL.Create.Units(int,string)'></a>
 
-## Create\.Units\(int\) Method
+## Create\.Units\(int, string\) Method
 
 Asynchronously retrieves a list of units from the API endpoint\.
 
 ```csharp
-public static System.Threading.Tasks.Task<System.Collections.Generic.List<DiGi.BDL.Classes.Unit>?> Units(int pageSize=100);
+public static System.Threading.Tasks.Task<System.Collections.Generic.List<DiGi.BDL.Classes.Unit>?> Units(int pageSize=100, string? clientId=null);
 ```
 #### Parameters
 
-<a name='DiGi.BDL.Create.Units(int).pageSize'></a>
+<a name='DiGi.BDL.Create.Units(int,string).pageSize'></a>
 
 `pageSize` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
 
 The number of records to retrieve per page\.
+
+<a name='DiGi.BDL.Create.Units(int,string).clientId'></a>
+
+`clientId` [System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')
+
+Optional BDL API client identifier \(API key\) passed in the X\-ClientId header\.
 
 #### Returns
 [System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[System\.Collections\.Generic\.List&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1 'System\.Collections\.Generic\.List\`1')[Unit](DiGi.BDL.Classes.md#DiGi.BDL.Classes.Unit 'DiGi\.BDL\.Classes\.Unit')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1 'System\.Collections\.Generic\.List\`1')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  

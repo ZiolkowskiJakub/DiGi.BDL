@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
@@ -23,6 +23,12 @@
 
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="10.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DiGi.Core">
+      <HintPath>..\..\DiGi.Core\bin\DiGi.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

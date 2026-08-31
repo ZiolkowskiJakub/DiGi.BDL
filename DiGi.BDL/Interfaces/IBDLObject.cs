@@ -1,6 +1,6 @@
-﻿namespace DiGi.BDL.Interfaces
+namespace DiGi.BDL.Interfaces
 {
-    public interface IBDLObject
+    public interface IBDLObject : DiGi.Core.Interfaces.IObject
     {
     }
 }
